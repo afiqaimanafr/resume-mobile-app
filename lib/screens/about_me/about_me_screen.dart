@@ -1,4 +1,5 @@
 import 'package:afiq_resume/constants.dart';
+import 'package:afiq_resume/screens/about_me/widgets/skills_card.dart';
 import 'package:flutter/material.dart';
 
 class AboutMeScreen extends StatelessWidget {
@@ -143,6 +144,7 @@ class AboutMeScreen extends StatelessWidget {
                 ),
               ),
             ),
+            const SkillsCard(),
           ],
         ),
       ),

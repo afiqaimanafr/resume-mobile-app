@@ -1,8 +1,7 @@
 import 'package:afiq_resume/constants.dart';
-import 'package:afiq_resume/screens/about_me_screen.dart';
-import 'package:afiq_resume/screens/education_screen.dart';
-import 'package:afiq_resume/screens/experience_screen.dart';
-import 'package:flutter/gestures.dart';
+import 'package:afiq_resume/screens/about_me/about_me_screen.dart';
+import 'package:afiq_resume/screens/education/education_screen.dart';
+import 'package:afiq_resume/screens/experience/experience_screen.dart';
 import 'package:flutter/material.dart';
 
 class TabsScreen extends StatefulWidget {

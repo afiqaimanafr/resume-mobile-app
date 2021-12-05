@@ -1,4 +1,4 @@
-import 'package:afiq_resume/screens/tabs_screen.dart';
+import 'package:afiq_resume/screens/tabs/tabs_screen.dart';
 import 'package:flutter/material.dart';
 
 void main() {
