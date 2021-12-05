@@ -2,6 +2,7 @@ import 'package:afiq_resume/constants.dart';
 import 'package:afiq_resume/screens/about_me_screen.dart';
 import 'package:afiq_resume/screens/education_screen.dart';
 import 'package:afiq_resume/screens/experience_screen.dart';
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 
 class TabsScreen extends StatefulWidget {
@@ -42,6 +43,10 @@ class _TabsScreenState extends State<TabsScreen>
         ),
         backgroundColor: kPrimaryColor,
         bottom: TabBar(
+          indicatorColor: Colors.white,
+          labelStyle: const TextStyle(
+            fontFamily: secondaryFamilyFont,
+          ),
           controller: controller,
           tabs: const [
             Tab(
@@ -50,11 +55,11 @@ class _TabsScreenState extends State<TabsScreen>
             ),
             Tab(
               text: 'Experience',
-              icon: Icon(Icons.checklist_rounded),
+              icon: Icon(Icons.assignment_outlined),
             ),
             Tab(
               text: 'Education',
-              icon: Icon(Icons.chrome_reader_mode_outlined),
+              icon: Icon(Icons.school_outlined),
             ),
           ],
         ),
