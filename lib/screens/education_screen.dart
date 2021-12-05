@@ -9,7 +9,10 @@ class EducationScreen extends StatelessWidget {
     return const Scaffold(
       backgroundColor: kPrimaryColor,
       body: Center(
-        child: Text('Education Screen'),
+        child: Text(
+          'Education Screen',
+          style: TextStyle(color: kPrimaryLightColor),
+        ),
       ),
     );
   }

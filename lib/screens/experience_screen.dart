@@ -9,7 +9,10 @@ class ExperienceScreen extends StatelessWidget {
     return const Scaffold(
       backgroundColor: kPrimaryColor,
       body: Center(
-        child: Text('Experience Screen'),
+        child: Text(
+          'Experience Screen',
+          style: TextStyle(color: kPrimaryLightColor),
+        ),
       ),
     );
   }

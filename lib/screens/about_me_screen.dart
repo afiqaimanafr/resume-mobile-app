@@ -9,7 +9,10 @@ class AboutMeScreen extends StatelessWidget {
     return const Scaffold(
       backgroundColor: kPrimaryColor,
       body: Center(
-        child: Text('About Me Screen'),
+        child: Text(
+          'About Me Screen',
+          style: TextStyle(color: kPrimaryLightColor),
+        ),
       ),
     );
   }
