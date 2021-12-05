@@ -4,43 +4,68 @@ import 'package:afiq_resume/screens/education_screen.dart';
 import 'package:afiq_resume/screens/experience_screen.dart';
 import 'package:flutter/material.dart';
 
-class TabsScreen extends StatelessWidget {
+class TabsScreen extends StatefulWidget {
   const TabsScreen({Key? key}) : super(key: key);
 
   @override
+  State<TabsScreen> createState() => _TabsScreenState();
+}
+
+class _TabsScreenState extends State<TabsScreen>
+    with SingleTickerProviderStateMixin {
+  late TabController controller;
+
+  @override
+  void initState() {
+    super.initState();
+    controller = TabController(length: 3, vsync: this);
+    controller.addListener(() {
+      setState(() {});
+    });
+  }
+
+  @override
+  void dispose() {
+    controller.dispose();
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
-    return DefaultTabController(
-      length: 3,
-      child: Scaffold(
-        backgroundColor: kPrimaryColor,
-        appBar: AppBar(
-          title: const Text('Afiq Aiman'),
-          backgroundColor: kPrimaryColor,
-          bottom: const TabBar(
-            // ignore: prefer_const_literals_to_create_immutables
-            tabs: [
-              Tab(
-                text: 'About Me',
-                icon: Icon(Icons.person),
-              ),
-              Tab(
-                text: 'Experience',
-                icon: Icon(Icons.exposure),
-              ),
-              Tab(
-                text: 'Education',
-                icon: Icon(Icons.cast_for_education),
-              ),
-            ],
-          ),
+    return Scaffold(
+      backgroundColor: kPrimaryColor,
+      appBar: AppBar(
+        centerTitle: true,
+        title: const Text(
+          'Afiq Aiman',
+          style: TextStyle(fontFamily: primaryFamilyFont),
         ),
-        body: const TabBarView(
-          children: [
-            AboutMeScreen(),
-            ExperienceScreen(),
-            EducationScreen(),
+        backgroundColor: kPrimaryColor,
+        bottom: TabBar(
+          controller: controller,
+          tabs: const [
+            Tab(
+              text: 'About Me',
+              icon: Icon(Icons.account_circle_outlined),
+            ),
+            Tab(
+              text: 'Experience',
+              icon: Icon(Icons.checklist_rounded),
+            ),
+            Tab(
+              text: 'Education',
+              icon: Icon(Icons.chrome_reader_mode_outlined),
+            ),
           ],
         ),
+      ),
+      body: TabBarView(
+        controller: controller,
+        children: const [
+          AboutMeScreen(),
+          ExperienceScreen(),
+          EducationScreen(),
+        ],
       ),
     );
   }
