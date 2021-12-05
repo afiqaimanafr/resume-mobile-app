@@ -102,7 +102,7 @@ class AboutMeScreen extends StatelessWidget {
                                   'Kajang, Selangor'),
                               buildText(
                                   const Icon(
-                                    Icons.email,
+                                    Icons.alternate_email,
                                     color: kPrimaryLightColor,
                                   ),
                                   'aaafr98@gmail.com'),
@@ -120,9 +120,22 @@ class AboutMeScreen extends StatelessWidget {
                       ),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                        children: const <Widget>[
-                          Text('data'),
-                          Text('data'),
+                        children: <Widget>[
+                          Image.asset(
+                            'assets/images/email.png',
+                            height: 30,
+                            color: kPrimaryLightColor,
+                          ),
+                          Image.asset(
+                            'assets/images/linkedin.png',
+                            height: 30,
+                            color: kPrimaryLightColor,
+                          ),
+                          Image.asset(
+                            'assets/images/github.png',
+                            height: 30,
+                            color: kPrimaryLightColor,
+                          ),
                         ],
                       ),
                     )
