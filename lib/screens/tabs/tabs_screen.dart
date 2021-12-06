@@ -65,10 +65,10 @@ class _TabsScreenState extends State<TabsScreen>
       ),
       body: TabBarView(
         controller: controller,
-        children: const [
-          AboutMeScreen(),
+        children: [
+          const AboutMeScreen(),
           ExperienceScreen(),
-          EducationScreen(),
+          const EducationScreen(),
         ],
       ),
     );
