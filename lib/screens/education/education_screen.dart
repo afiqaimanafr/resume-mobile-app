@@ -8,43 +8,51 @@ class EducationScreen extends StatelessWidget {
       title: 'Software Engineering',
     ),
     CourseModel(
-      title: 'Software Engineering',
+      title: 'Robotics',
     ),
     CourseModel(
-      title: 'Software Engineering',
+      title: 'Digital Signal Processing',
     ),
     CourseModel(
-      title: 'Software Engineering',
+      title: 'Industrial Automation',
     ),
     CourseModel(
-      title: 'Software Engineering',
+      title: 'Biomedical Instrumentation',
     ),
     CourseModel(
-      title: 'Software Engineering',
+      title: 'Control System',
     ),
     CourseModel(
-      title: 'Software Engineering',
+      title: 'Embedded System Design',
     ),
     CourseModel(
-      title: 'Software Engineering',
+      title: 'Power Electronics & Drives',
     ),
     CourseModel(
-      title: 'Software Engineering',
+      title: 'Engineering Design',
     ),
   ];
 
   Widget buildCard(CourseModel item) {
     return Container(
-      height: 200,
-      width: 200,
-      color: kPrimaryLightColor.withOpacity(0.2),
-      child: Center(
-        child: Text(
-          item.title,
-          style: const TextStyle(
-            color: kPrimaryLightColor,
-            fontFamily: primaryFamilyFont,
-            fontSize: 20,
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(10),
+        color: kPrimaryLightColor.withOpacity(0.2),
+      ),
+      width: 150,
+      child: Expanded(
+        child: Padding(
+          padding: const EdgeInsets.all(10.0),
+          child: Center(
+            child: Text(
+              item.title,
+              style: const TextStyle(
+                color: kPrimaryLightColor,
+                fontFamily: primaryFamilyFont,
+                fontSize: 20,
+              ),
+              textAlign: TextAlign.center,
+            ),
           ),
         ),
       ),
@@ -56,10 +64,13 @@ class EducationScreen extends StatelessWidget {
     return Scaffold(
       backgroundColor: kPrimaryColor,
       body: Container(
-        height: 200,
+        padding: const EdgeInsets.only(
+          top: 10,
+        ),
+        height: 100,
         child: ListView.separated(
           separatorBuilder: (context, _) => const SizedBox(
-            width: 12,
+            width: 10,
           ),
           itemCount: course.length,
           scrollDirection: Axis.horizontal,
