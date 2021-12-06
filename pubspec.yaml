@@ -65,6 +65,10 @@ flutter:
     - assets/images/email.png
     - assets/images/linkedin.png
     - assets/images/github.png
+    - assets/images/cooking.png
+    - assets/images/smartphone.png
+    - assets/images/tutor.png
+    - assets/images/web-programming.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

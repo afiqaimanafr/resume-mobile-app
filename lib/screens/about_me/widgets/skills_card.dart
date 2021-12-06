@@ -16,7 +16,7 @@ class SkillsCard extends StatelessWidget {
             skill,
             style: const TextStyle(
               color: kPrimaryLightColor,
-              fontFamily: primaryFamilyFont,
+              fontFamily: secondaryFamilyFont,
               fontSize: 17,
             ),
           ),
@@ -24,7 +24,7 @@ class SkillsCard extends StatelessWidget {
             percentage,
             style: const TextStyle(
               color: kPrimaryLightColor,
-              fontFamily: primaryFamilyFont,
+              fontFamily: secondaryFamilyFont,
               fontSize: 17,
             ),
           ),

@@ -3,11 +3,11 @@ import 'package:flutter/cupertino.dart';
 class ExperienceModel {
   final String title;
   final String subtitle;
-  final Icon icons;
+  final String image;
 
   ExperienceModel({
     required this.title,
     required this.subtitle,
-    required this.icons,
+    required this.image,
   });
 }

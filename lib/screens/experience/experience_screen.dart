@@ -5,29 +5,17 @@ import 'package:flutter/material.dart';
 class ExperienceScreen extends StatelessWidget {
   List<ExperienceModel> experience = [
     ExperienceModel(
-      title: 'title',
-      subtitle: 'subtitle',
-      icons: const Icon(
-        Icons.ac_unit,
-        color: kPrimaryLightColor,
-      ),
-    ),
+        title: 'title',
+        subtitle: 'subtitle',
+        image: 'assets/images/smartphone.png'),
     ExperienceModel(
-      title: 'title',
-      subtitle: 'subtitle',
-      icons: const Icon(
-        Icons.ac_unit,
-        color: kPrimaryLightColor,
-      ),
-    ),
+        title: 'title',
+        subtitle: 'subtitle',
+        image: 'assets/images/web-programming.png'),
     ExperienceModel(
-      title: 'title',
-      subtitle: 'subtitle',
-      icons: const Icon(
-        Icons.ac_unit,
-        color: kPrimaryLightColor,
-      ),
-    ),
+        title: 'title',
+        subtitle: 'subtitle',
+        image: 'assets/images/cooking.png'),
   ];
 
   @override
@@ -43,7 +31,7 @@ class ExperienceScreen extends StatelessWidget {
             child: Card(
               color: kPrimaryLightColor.withOpacity(0.2),
               child: ListTile(
-                leading: item.icons,
+                leading: Image.asset(item.image),
                 title: Text(
                   item.title,
                   style: const TextStyle(
