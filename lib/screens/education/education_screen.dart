@@ -39,7 +39,7 @@ class EducationScreen extends StatelessWidget {
         borderRadius: BorderRadius.circular(10),
         color: kPrimaryLightColor.withOpacity(0.2),
       ),
-      width: 150,
+      width: 200,
       child: Expanded(
         child: Padding(
           padding: const EdgeInsets.all(10.0),
