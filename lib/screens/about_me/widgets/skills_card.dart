@@ -58,7 +58,6 @@ class SkillsCard extends StatelessWidget {
         left: 10,
         right: 10,
       ),
-      height: 500,
       width: double.infinity,
       child: Card(
         color: Colors.white.withOpacity(0.2),
@@ -93,6 +92,9 @@ class SkillsCard extends StatelessWidget {
               buildProgressIndicator(0.4, Colors.red),
               buildLabelIndicator('PHP', '40%'),
               buildProgressIndicator(0.4, Colors.green),
+              const SizedBox(
+                height: 10,
+              ),
             ],
           ),
         ),
