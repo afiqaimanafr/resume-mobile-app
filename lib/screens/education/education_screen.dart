@@ -40,19 +40,17 @@ class EducationScreen extends StatelessWidget {
         color: kPrimaryLightColor.withOpacity(0.2),
       ),
       width: 150,
-      child: Expanded(
-        child: Padding(
-          padding: const EdgeInsets.all(10.0),
-          child: Center(
-            child: Text(
-              item.title,
-              style: const TextStyle(
-                color: kPrimaryLightColor,
-                fontFamily: primaryFamilyFont,
-                fontSize: 17,
-              ),
-              textAlign: TextAlign.center,
+      child: Padding(
+        padding: const EdgeInsets.all(10.0),
+        child: Center(
+          child: Text(
+            item.title,
+            style: const TextStyle(
+              color: kPrimaryLightColor,
+              fontFamily: primaryFamilyFont,
+              fontSize: 17,
             ),
+            textAlign: TextAlign.center,
           ),
         ),
       ),
@@ -63,21 +61,25 @@ class EducationScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: kPrimaryColor,
-      body: Container(
-        padding: const EdgeInsets.only(
-          top: 10,
-        ),
-        height: 100,
-        child: ListView.separated(
-          separatorBuilder: (context, _) => const SizedBox(
-            width: 10,
-          ),
-          itemCount: course.length,
-          scrollDirection: Axis.horizontal,
-          itemBuilder: (context, index) {
-            final item = course[index];
-            return buildCard(item);
-          },
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            SizedBox(
+              height: 150,
+              child: ListView.separated(
+                padding: const EdgeInsets.all(10),
+                separatorBuilder: (context, _) => const SizedBox(
+                  width: 10,
+                ),
+                itemCount: course.length,
+                scrollDirection: Axis.horizontal,
+                itemBuilder: (context, index) {
+                  final item = course[index];
+                  return buildCard(item);
+                },
+              ),
+            ),
+          ],
         ),
       ),
     );
