@@ -39,7 +39,7 @@ class EducationScreen extends StatelessWidget {
         borderRadius: BorderRadius.circular(10),
         color: kPrimaryLightColor.withOpacity(0.2),
       ),
-      width: 200,
+      width: 150,
       child: Expanded(
         child: Padding(
           padding: const EdgeInsets.all(10.0),
@@ -49,7 +49,7 @@ class EducationScreen extends StatelessWidget {
               style: const TextStyle(
                 color: kPrimaryLightColor,
                 fontFamily: primaryFamilyFont,
-                fontSize: 20,
+                fontSize: 17,
               ),
               textAlign: TextAlign.center,
             ),
