@@ -60,37 +60,34 @@ class SkillsCard extends StatelessWidget {
       ),
       height: 500,
       width: double.infinity,
-      child: ClipRRect(
-        borderRadius: BorderRadius.circular(20),
-        child: Card(
-          color: Colors.white.withOpacity(0.2),
-          child: Expanded(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: <Widget>[
-                const Padding(
-                  padding: EdgeInsets.only(
-                    left: 10.0,
-                    top: 10.0,
-                    right: 10.0,
-                    bottom: 15.0,
-                  ),
-                  child: Text(
-                    'Skills',
-                    style: TextStyle(
-                      color: kPrimaryLightColor,
-                      fontFamily: primaryFamilyFont,
-                      fontWeight: FontWeight.bold,
-                      fontSize: 20,
-                    ),
+      child: Card(
+        color: Colors.white.withOpacity(0.2),
+        child: Expanded(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: <Widget>[
+              const Padding(
+                padding: EdgeInsets.only(
+                  left: 10.0,
+                  top: 10.0,
+                  right: 10.0,
+                  bottom: 15.0,
+                ),
+                child: Text(
+                  'Skills',
+                  style: TextStyle(
+                    color: kPrimaryLightColor,
+                    fontFamily: primaryFamilyFont,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 20,
                   ),
                 ),
-                buildLabelIndicator('Flutter', '70%'),
-                buildProgressIndicator(0.7, Colors.blueAccent),
-                buildLabelIndicator('Dart', '60%'),
-                buildProgressIndicator(0.6, Colors.red),
-              ],
-            ),
+              ),
+              buildLabelIndicator('Flutter', '70%'),
+              buildProgressIndicator(0.7, Colors.blueAccent),
+              buildLabelIndicator('Dart', '60%'),
+              buildProgressIndicator(0.6, Colors.red),
+            ],
           ),
         ),
       ),
