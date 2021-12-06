@@ -9,7 +9,7 @@ class ExperienceScreen extends StatelessWidget {
       subtitle: 'October 2021 - Present',
       image: 'assets/images/smartphone.png',
       firstDetail:
-          'Developed mobile applications by utilizing Flutter and Dart',
+          'Successfully developed two mobile applications (as of now) by utilizing Flutter and Dart',
     ),
     ExperienceModel(
       title: 'Web Developer Trainee',
