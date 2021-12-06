@@ -63,7 +63,20 @@ class EducationScreen extends StatelessWidget {
       backgroundColor: kPrimaryColor,
       body: SingleChildScrollView(
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
+            const Padding(
+              padding: EdgeInsets.all(10.0),
+              child: Text(
+                'Courses Taken',
+                style: TextStyle(
+                  fontFamily: primaryFamilyFont,
+                  fontWeight: FontWeight.bold,
+                  color: kPrimaryLightColor,
+                  fontSize: 20,
+                ),
+              ),
+            ),
             SizedBox(
               height: 150,
               child: ListView.separated(
