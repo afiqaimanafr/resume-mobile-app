@@ -33,6 +33,21 @@ class EducationScreen extends StatelessWidget {
     ),
   ];
 
+  Widget buildTitle(String title) {
+    return Padding(
+      padding: EdgeInsets.all(10.0),
+      child: Text(
+        title,
+        style: const TextStyle(
+          fontFamily: primaryFamilyFont,
+          fontWeight: FontWeight.bold,
+          color: kPrimaryLightColor,
+          fontSize: 20,
+        ),
+      ),
+    );
+  }
+
   Widget buildCard(CourseModel item) {
     return Container(
       decoration: BoxDecoration(
@@ -65,18 +80,7 @@ class EducationScreen extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const Padding(
-              padding: EdgeInsets.all(10.0),
-              child: Text(
-                'Courses Taken',
-                style: TextStyle(
-                  fontFamily: primaryFamilyFont,
-                  fontWeight: FontWeight.bold,
-                  color: kPrimaryLightColor,
-                  fontSize: 20,
-                ),
-              ),
-            ),
+            buildTitle('Courses Taken'),
             SizedBox(
               height: 150,
               child: ListView.separated(
@@ -92,6 +96,7 @@ class EducationScreen extends StatelessWidget {
                 },
               ),
             ),
+            buildTitle('Academic Projects & Achievements'),
           ],
         ),
       ),
