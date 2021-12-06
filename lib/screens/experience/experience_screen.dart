@@ -5,16 +5,16 @@ import 'package:flutter/material.dart';
 class ExperienceScreen extends StatelessWidget {
   List<ExperienceModel> experience = [
     ExperienceModel(
-        title: 'title',
-        subtitle: 'subtitle',
+        title: 'Mobile Developer',
+        subtitle: 'October 2021 - Present',
         image: 'assets/images/smartphone.png'),
     ExperienceModel(
-        title: 'title',
-        subtitle: 'subtitle',
+        title: 'Web Developer Trainee',
+        subtitle: 'July 2021 - September 2021',
         image: 'assets/images/web-programming.png'),
     ExperienceModel(
-        title: 'title',
-        subtitle: 'subtitle',
+        title: 'Part-time Worker',
+        subtitle: 'June 2019 - August 2019',
         image: 'assets/images/cooking.png'),
   ];
 
@@ -26,27 +26,54 @@ class ExperienceScreen extends StatelessWidget {
         itemCount: experience.length,
         itemBuilder: (ctx, index) {
           final item = experience[index];
-          return Padding(
-            padding: const EdgeInsets.all(10.0),
+          return Container(
+            padding: const EdgeInsets.all(10),
+            width: double.infinity,
             child: Card(
-              color: kPrimaryLightColor.withOpacity(0.2),
-              child: ListTile(
-                leading: Image.asset(item.image),
-                title: Text(
-                  item.title,
-                  style: const TextStyle(
-                    color: kPrimaryLightColor,
-                    fontWeight: FontWeight.bold,
-                    fontFamily: primaryFamilyFont,
+              color: Colors.white.withOpacity(0.2),
+              child: Row(
+                children: <Widget>[
+                  Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: <Widget>[
+                      Padding(
+                        padding: const EdgeInsets.all(10.0),
+                        child: CircleAvatar(
+                          radius: 50,
+                          backgroundColor: Colors.transparent,
+                          backgroundImage: AssetImage(item.image),
+                        ),
+                      ),
+                    ],
                   ),
-                ),
-                subtitle: Text(
-                  item.subtitle,
-                  style: const TextStyle(
-                    color: kPrimaryLightColor,
-                    fontFamily: secondaryFamilyFont,
+                  Expanded(
+                    child: Padding(
+                      padding: const EdgeInsets.symmetric(
+                        vertical: 10,
+                        horizontal: 10,
+                      ),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: <Widget>[
+                          Text(
+                            item.title,
+                            style: const TextStyle(
+                              color: kPrimaryLightColor,
+                              fontFamily: secondaryFamilyFont,
+                            ),
+                          ),
+                          Text(
+                            item.subtitle,
+                            style: const TextStyle(
+                              color: kPrimaryLightColor,
+                              fontFamily: secondaryFamilyFont,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
                   ),
-                ),
+                ],
               ),
             ),
           );
