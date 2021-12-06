@@ -73,59 +73,57 @@ class SkillsCard extends StatelessWidget {
       width: double.infinity,
       child: Card(
         color: Colors.white.withOpacity(0.2),
-        child: Expanded(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: <Widget>[
-              const Padding(
-                padding: EdgeInsets.only(
-                  left: 10.0,
-                  top: 10.0,
-                  right: 10.0,
-                  bottom: 15.0,
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: <Widget>[
+            const Padding(
+              padding: EdgeInsets.only(
+                left: 10.0,
+                top: 10.0,
+                right: 10.0,
+                bottom: 15.0,
+              ),
+              child: Text(
+                'Skills',
+                style: TextStyle(
+                  color: kPrimaryLightColor,
+                  fontFamily: primaryFamilyFont,
+                  fontWeight: FontWeight.bold,
+                  fontSize: 20,
                 ),
-                child: Text(
-                  'Skills',
-                  style: TextStyle(
-                    color: kPrimaryLightColor,
-                    fontFamily: primaryFamilyFont,
-                    fontWeight: FontWeight.bold,
-                    fontSize: 20,
+              ),
+            ),
+            buildLabelIndicator('Flutter', '60%'),
+            buildProgressIndicator(0.6, Colors.blueAccent),
+            buildLabelIndicator('Dart', '60%'),
+            buildProgressIndicator(0.6, Colors.purple),
+            buildLabelIndicator('HTML & CSS', '60%'),
+            buildProgressIndicator(0.6, Colors.yellow),
+            buildLabelIndicator('Laravel', '40%'),
+            buildProgressIndicator(0.4, Colors.red),
+            buildLabelIndicator('PHP', '40%'),
+            buildProgressIndicator(0.4, Colors.green),
+            Padding(
+              padding: const EdgeInsets.symmetric(
+                horizontal: 10,
+              ),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  buildOtherSkills('JavaScript'),
+                  buildOtherSkills('Python'),
+                  buildOtherSkills('C#'),
+                  buildOtherSkills('C++'),
+                  Expanded(
+                    child: buildOtherSkills('Microsoft Office'),
                   ),
-                ),
+                ],
               ),
-              buildLabelIndicator('Flutter', '60%'),
-              buildProgressIndicator(0.6, Colors.blueAccent),
-              buildLabelIndicator('Dart', '60%'),
-              buildProgressIndicator(0.6, Colors.purple),
-              buildLabelIndicator('HTML & CSS', '60%'),
-              buildProgressIndicator(0.6, Colors.yellow),
-              buildLabelIndicator('Laravel', '40%'),
-              buildProgressIndicator(0.4, Colors.red),
-              buildLabelIndicator('PHP', '40%'),
-              buildProgressIndicator(0.4, Colors.green),
-              Padding(
-                padding: const EdgeInsets.symmetric(
-                  horizontal: 10,
-                ),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: [
-                    buildOtherSkills('JavaScript'),
-                    buildOtherSkills('Python'),
-                    buildOtherSkills('C#'),
-                    buildOtherSkills('C++'),
-                    Expanded(
-                      child: buildOtherSkills('Microsoft Office'),
-                    ),
-                  ],
-                ),
-              ),
-              const SizedBox(
-                height: 10,
-              ),
-            ],
-          ),
+            ),
+            const SizedBox(
+              height: 10,
+            ),
+          ],
         ),
       ),
     );
