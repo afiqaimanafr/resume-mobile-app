@@ -68,7 +68,7 @@ class _TabsScreenState extends State<TabsScreen>
         children: [
           const AboutMeScreen(),
           ExperienceScreen(),
-          const EducationScreen(),
+          EducationScreen(),
         ],
       ),
     );

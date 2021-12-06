@@ -1,5 +1,3 @@
-import 'package:flutter/cupertino.dart';
-
 class ExperienceModel {
   final String title;
   final String subtitle;
