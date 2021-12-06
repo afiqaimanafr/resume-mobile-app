@@ -50,6 +50,18 @@ class SkillsCard extends StatelessWidget {
     );
   }
 
+  Widget buildOtherSkills(String skill) {
+    return ClipRRect(
+      borderRadius: BorderRadius.circular(5),
+      child: Card(
+        child: Padding(
+          padding: const EdgeInsets.all(5.0),
+          child: Text(skill),
+        ),
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -92,6 +104,23 @@ class SkillsCard extends StatelessWidget {
               buildProgressIndicator(0.4, Colors.red),
               buildLabelIndicator('PHP', '40%'),
               buildProgressIndicator(0.4, Colors.green),
+              Padding(
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 10,
+                ),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    buildOtherSkills('JavaScript'),
+                    buildOtherSkills('Python'),
+                    buildOtherSkills('C#'),
+                    buildOtherSkills('C++'),
+                    Expanded(
+                      child: buildOtherSkills('Microsoft Office'),
+                    ),
+                  ],
+                ),
+              ),
               const SizedBox(
                 height: 10,
               ),
