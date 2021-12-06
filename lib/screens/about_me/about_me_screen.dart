@@ -116,10 +116,10 @@ class AboutMeScreen extends StatelessWidget {
                                   'Kajang, Selangor'),
                               buildText(
                                   const Icon(
-                                    Icons.alternate_email,
+                                    Icons.note_alt,
                                     color: kPrimaryLightColor,
                                   ),
-                                  'aaafr98@gmail.com'),
+                                  'Bachelor of Engineering (Mechatronics) (CGPA: 3.60)'),
                             ],
                           ),
                         ),
