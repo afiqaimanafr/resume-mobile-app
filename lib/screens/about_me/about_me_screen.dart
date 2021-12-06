@@ -1,9 +1,22 @@
 import 'package:afiq_resume/constants.dart';
 import 'package:afiq_resume/screens/about_me/widgets/skills_card.dart';
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class AboutMeScreen extends StatelessWidget {
   const AboutMeScreen({Key? key}) : super(key: key);
+
+  _openEmail() async {
+    launch('mailto:aaafr98@gmail.com?subject=Afiq Aiman&body=Hello Afiq,');
+  }
+
+  _openLinkedin() async {
+    launch('https://www.linkedin.com/in/aaafr98/');
+  }
+
+  _openGithub() async {
+    launch('https://github.com/afiqaimanafr');
+  }
 
   Widget buildText(Icon icons, String text) {
     return Padding(
@@ -122,20 +135,29 @@ class AboutMeScreen extends StatelessWidget {
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: <Widget>[
-                          Image.asset(
-                            'assets/images/email.png',
-                            height: 30,
-                            color: kPrimaryLightColor,
+                          GestureDetector(
+                            onTap: () => _openEmail(),
+                            child: Image.asset(
+                              'assets/images/email.png',
+                              height: 30,
+                              color: kPrimaryLightColor,
+                            ),
                           ),
-                          Image.asset(
-                            'assets/images/linkedin.png',
-                            height: 30,
-                            color: kPrimaryLightColor,
+                          GestureDetector(
+                            onTap: () => _openLinkedin(),
+                            child: Image.asset(
+                              'assets/images/linkedin.png',
+                              height: 30,
+                              color: kPrimaryLightColor,
+                            ),
                           ),
-                          Image.asset(
-                            'assets/images/github.png',
-                            height: 30,
-                            color: kPrimaryLightColor,
+                          GestureDetector(
+                            onTap: () => _openGithub(),
+                            child: Image.asset(
+                              'assets/images/github.png',
+                              height: 30,
+                              color: kPrimaryLightColor,
+                            ),
                           ),
                         ],
                       ),
