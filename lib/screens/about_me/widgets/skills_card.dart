@@ -56,7 +56,12 @@ class SkillsCard extends StatelessWidget {
       child: Card(
         child: Padding(
           padding: const EdgeInsets.all(5.0),
-          child: Text(skill),
+          child: Text(
+            skill,
+            style: const TextStyle(
+              fontFamily: secondaryFamilyFont,
+            ),
+          ),
         ),
       ),
     );

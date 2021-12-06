@@ -48,12 +48,15 @@ class ExperienceScreen extends StatelessWidget {
                   item.title,
                   style: const TextStyle(
                     color: kPrimaryLightColor,
+                    fontWeight: FontWeight.bold,
+                    fontFamily: primaryFamilyFont,
                   ),
                 ),
                 subtitle: Text(
                   item.subtitle,
                   style: const TextStyle(
                     color: kPrimaryLightColor,
+                    fontFamily: secondaryFamilyFont,
                   ),
                 ),
               ),
