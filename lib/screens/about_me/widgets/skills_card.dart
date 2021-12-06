@@ -4,6 +4,52 @@ import 'package:flutter/material.dart';
 class SkillsCard extends StatelessWidget {
   const SkillsCard({Key? key}) : super(key: key);
 
+  Widget buildLabelIndicator(String skill, String percentage) {
+    return Padding(
+      padding: const EdgeInsets.symmetric(
+        horizontal: 10.0,
+      ),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          Text(
+            skill,
+            style: const TextStyle(
+              color: kPrimaryLightColor,
+              fontFamily: primaryFamilyFont,
+              fontSize: 17,
+            ),
+          ),
+          Text(
+            percentage,
+            style: const TextStyle(
+              color: kPrimaryLightColor,
+              fontFamily: primaryFamilyFont,
+              fontSize: 17,
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget buildProgressIndicator(double value, Color colour) {
+    return Padding(
+      padding: const EdgeInsets.all(10.0),
+      child: SizedBox(
+        height: 10,
+        child: ClipRRect(
+          borderRadius: BorderRadius.circular(10),
+          child: LinearProgressIndicator(
+            value: value,
+            valueColor: AlwaysStoppedAnimation(colour),
+            backgroundColor: Colors.white,
+          ),
+        ),
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -14,65 +60,37 @@ class SkillsCard extends StatelessWidget {
       ),
       height: 500,
       width: double.infinity,
-      child: Card(
-        color: Colors.white.withOpacity(0.2),
-        child: Expanded(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: <Widget>[
-              const Padding(
-                padding: EdgeInsets.all(10.0),
-                child: Text(
-                  'Skills',
-                  style: TextStyle(
-                    color: kPrimaryLightColor,
-                    fontFamily: primaryFamilyFont,
-                    fontWeight: FontWeight.bold,
-                    fontSize: 25,
+      child: ClipRRect(
+        borderRadius: BorderRadius.circular(20),
+        child: Card(
+          color: Colors.white.withOpacity(0.2),
+          child: Expanded(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: <Widget>[
+                const Padding(
+                  padding: EdgeInsets.only(
+                    left: 10.0,
+                    top: 10.0,
+                    right: 10.0,
+                    bottom: 15.0,
                   ),
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.symmetric(
-                  horizontal: 10.0,
-                ),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: const [
-                    Text(
-                      'Flutter',
-                      style: TextStyle(
-                        color: kPrimaryLightColor,
-                        fontFamily: primaryFamilyFont,
-                        fontSize: 20,
-                      ),
-                    ),
-                    Text(
-                      '50%',
-                      style: TextStyle(
-                        color: kPrimaryLightColor,
-                        fontFamily: primaryFamilyFont,
-                        fontSize: 20,
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.all(10.0),
-                child: SizedBox(
-                  height: 10,
-                  child: ClipRRect(
-                    borderRadius: BorderRadius.circular(50),
-                    child: const LinearProgressIndicator(
-                      value: 0.5,
-                      valueColor: AlwaysStoppedAnimation(Colors.purple),
-                      backgroundColor: Colors.white,
+                  child: Text(
+                    'Skills',
+                    style: TextStyle(
+                      color: kPrimaryLightColor,
+                      fontFamily: primaryFamilyFont,
+                      fontWeight: FontWeight.bold,
+                      fontSize: 20,
                     ),
                   ),
                 ),
-              )
-            ],
+                buildLabelIndicator('Flutter', '70%'),
+                buildProgressIndicator(0.7, Colors.blueAccent),
+                buildLabelIndicator('Dart', '60%'),
+                buildProgressIndicator(0.6, Colors.red),
+              ],
+            ),
           ),
         ),
       ),
