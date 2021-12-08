@@ -68,12 +68,14 @@ class _EducationScreenState extends State<EducationScreen> {
       ),
       child: Column(
         children: [
-          const Padding(
-            padding: EdgeInsets.all(10.0),
+          Padding(
+            padding: const EdgeInsets.only(
+              top: 20,
+            ),
             child: CircleAvatar(
               radius: 50,
               backgroundColor: Colors.transparent,
-              backgroundImage: AssetImage('assets/images/tutor.png'),
+              backgroundImage: AssetImage(item.image),
             ),
           ),
           Center(
