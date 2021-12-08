@@ -66,20 +66,33 @@ class _EducationScreenState extends State<EducationScreen> {
         borderRadius: BorderRadius.circular(10),
         color: kPrimaryLightColor.withOpacity(0.2),
       ),
-      child: Padding(
-        padding: const EdgeInsets.all(10.0),
-        child: Center(
-          child: Text(
-            item.title,
-            style: const TextStyle(
-              color: kPrimaryLightColor,
-              fontFamily: primaryFamilyFont,
-              fontSize: 17,
+      child: Column(
+        children: [
+          const Padding(
+            padding: EdgeInsets.all(10.0),
+            child: CircleAvatar(
+              radius: 50,
+              backgroundColor: Colors.transparent,
+              backgroundImage: AssetImage('assets/images/tutor.png'),
             ),
-            maxLines: 5,
-            textAlign: TextAlign.center,
           ),
-        ),
+          Center(
+            child: Padding(
+              padding: const EdgeInsets.all(10.0),
+              child: Text(
+                item.title,
+                style: const TextStyle(
+                  color: kPrimaryLightColor,
+                  fontFamily: primaryFamilyFont,
+                  fontSize: 17,
+                ),
+                overflow: TextOverflow.ellipsis,
+                textAlign: TextAlign.center,
+                maxLines: 10,
+              ),
+            ),
+          ),
+        ],
       ),
     );
   }
@@ -110,7 +123,7 @@ class _EducationScreenState extends State<EducationScreen> {
             ),
             buildTitle('Academic Projects & Achievements'),
             SizedBox(
-              height: 200,
+              height: 280,
               child: ListView.separated(
                 padding: const EdgeInsets.all(10),
                 separatorBuilder: (context, _) => const SizedBox(

@@ -69,6 +69,11 @@ flutter:
     - assets/images/smartphone.png
     - assets/images/tutor.png
     - assets/images/web-programming.png
+    - assets/images/presentation.png
+    - assets/images/typewriter.png
+    - assets/images/exam.png
+    - assets/images/artificial-intelligence.png
+    - assets/images/robot.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
