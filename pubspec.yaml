@@ -74,6 +74,11 @@ flutter:
     - assets/images/exam.png
     - assets/images/artificial-intelligence.png
     - assets/images/robot.png
+    - assets/images/leader.png
+    - assets/images/teamwork.png
+    - assets/images/household.png
+    - assets/images/runner.png
+    - assets/images/volleyball.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

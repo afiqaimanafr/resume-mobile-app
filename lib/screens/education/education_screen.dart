@@ -139,6 +139,7 @@ class _EducationScreenState extends State<EducationScreen> {
                 },
               ),
             ),
+            buildTitle('Extracurricular Involvement'),
           ],
         ),
       ),
