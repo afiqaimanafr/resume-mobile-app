@@ -1,6 +1,8 @@
 import 'package:afiq_resume/constants.dart';
 import 'package:afiq_resume/models/course_model.dart';
+import 'package:afiq_resume/models/projects_and_achievements_model.dart';
 import 'package:afiq_resume/screens/education/data/course_data.dart';
+import 'package:afiq_resume/screens/education/data/projects_and_achievements_data.dart';
 import 'package:flutter/material.dart';
 
 class EducationScreen extends StatefulWidget {
@@ -10,11 +12,13 @@ class EducationScreen extends StatefulWidget {
 
 class _EducationScreenState extends State<EducationScreen> {
   late List<CourseModel> course;
+  late List<ProjectsAndAchievementsModel> projects;
   @override
   void initState() {
     super.initState();
 
     course = allCourses;
+    projects = allProjects;
   }
 
   Widget buildTitle(String title) {
@@ -55,6 +59,31 @@ class _EducationScreenState extends State<EducationScreen> {
     );
   }
 
+  Widget buildProjectsCard(ProjectsAndAchievementsModel item) {
+    return Container(
+      width: 400,
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(10),
+        color: kPrimaryLightColor.withOpacity(0.2),
+      ),
+      child: Padding(
+        padding: const EdgeInsets.all(10.0),
+        child: Center(
+          child: Text(
+            item.title,
+            style: const TextStyle(
+              color: kPrimaryLightColor,
+              fontFamily: primaryFamilyFont,
+              fontSize: 17,
+            ),
+            maxLines: 5,
+            textAlign: TextAlign.center,
+          ),
+        ),
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -81,17 +110,17 @@ class _EducationScreenState extends State<EducationScreen> {
             ),
             buildTitle('Academic Projects & Achievements'),
             SizedBox(
-              height: 100,
+              height: 200,
               child: ListView.separated(
                 padding: const EdgeInsets.all(10),
                 separatorBuilder: (context, _) => const SizedBox(
                   width: 10,
                 ),
-                itemCount: course.length,
+                itemCount: projects.length,
                 scrollDirection: Axis.horizontal,
                 itemBuilder: (context, index) {
-                  final item = course[index];
-                  return buildCard(item);
+                  final item = projects[index];
+                  return buildProjectsCard(item);
                 },
               ),
             ),
