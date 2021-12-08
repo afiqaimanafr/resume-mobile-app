@@ -1,37 +1,21 @@
 import 'package:afiq_resume/constants.dart';
 import 'package:afiq_resume/models/course_model.dart';
+import 'package:afiq_resume/screens/education/data/course_data.dart';
 import 'package:flutter/material.dart';
 
-class EducationScreen extends StatelessWidget {
-  List<CourseModel> course = [
-    CourseModel(
-      title: 'Software Engineering',
-    ),
-    CourseModel(
-      title: 'Robotics',
-    ),
-    CourseModel(
-      title: 'Digital Signal Processing',
-    ),
-    CourseModel(
-      title: 'Industrial Automation',
-    ),
-    CourseModel(
-      title: 'Biomedical Instrumentation',
-    ),
-    CourseModel(
-      title: 'Control System',
-    ),
-    CourseModel(
-      title: 'Embedded System Design',
-    ),
-    CourseModel(
-      title: 'Power Electronics & Drives',
-    ),
-    CourseModel(
-      title: 'Engineering Design',
-    ),
-  ];
+class EducationScreen extends StatefulWidget {
+  @override
+  State<EducationScreen> createState() => _EducationScreenState();
+}
+
+class _EducationScreenState extends State<EducationScreen> {
+  late List<CourseModel> course;
+  @override
+  void initState() {
+    super.initState();
+
+    course = allCourses;
+  }
 
   Widget buildTitle(String title) {
     return Padding(
@@ -54,7 +38,6 @@ class EducationScreen extends StatelessWidget {
         borderRadius: BorderRadius.circular(10),
         color: kPrimaryLightColor.withOpacity(0.2),
       ),
-      width: 150,
       child: Padding(
         padding: const EdgeInsets.all(10.0),
         child: Center(
@@ -82,7 +65,7 @@ class EducationScreen extends StatelessWidget {
           children: [
             buildTitle('Courses Taken'),
             SizedBox(
-              height: 150,
+              height: 100,
               child: ListView.separated(
                 padding: const EdgeInsets.all(10),
                 separatorBuilder: (context, _) => const SizedBox(
@@ -97,6 +80,21 @@ class EducationScreen extends StatelessWidget {
               ),
             ),
             buildTitle('Academic Projects & Achievements'),
+            SizedBox(
+              height: 100,
+              child: ListView.separated(
+                padding: const EdgeInsets.all(10),
+                separatorBuilder: (context, _) => const SizedBox(
+                  width: 10,
+                ),
+                itemCount: course.length,
+                scrollDirection: Axis.horizontal,
+                itemBuilder: (context, index) {
+                  final item = course[index];
+                  return buildCard(item);
+                },
+              ),
+            ),
           ],
         ),
       ),
