@@ -1,7 +1,9 @@
 import 'package:afiq_resume/constants.dart';
 import 'package:afiq_resume/models/course_model.dart';
+import 'package:afiq_resume/models/extracurricular_model.dart';
 import 'package:afiq_resume/models/projects_and_achievements_model.dart';
 import 'package:afiq_resume/screens/education/data/course_data.dart';
+import 'package:afiq_resume/screens/education/data/extracurricular_data.dart';
 import 'package:afiq_resume/screens/education/data/projects_and_achievements_data.dart';
 import 'package:flutter/material.dart';
 
@@ -13,12 +15,14 @@ class EducationScreen extends StatefulWidget {
 class _EducationScreenState extends State<EducationScreen> {
   late List<CourseModel> course;
   late List<ProjectsAndAchievementsModel> projects;
+  late List<ExtracurricularModel> extras;
+
   @override
   void initState() {
     super.initState();
-
     course = allCourses;
     projects = allProjects;
+    extras = allExtra;
   }
 
   Widget buildTitle(String title) {
