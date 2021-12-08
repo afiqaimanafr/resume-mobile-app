@@ -169,7 +169,7 @@ class _EducationScreenState extends State<EducationScreen> {
             ),
             buildTitle('Academic Projects & Achievements'),
             SizedBox(
-              height: 280,
+              height: 300,
               child: ListView.separated(
                 padding: const EdgeInsets.all(10),
                 separatorBuilder: (context, _) => const SizedBox(
