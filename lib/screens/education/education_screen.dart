@@ -224,10 +224,20 @@ class _EducationScreenState extends State<EducationScreen> {
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: <Widget>[
                                 Text(
-                                  item.title,
+                                  item.year,
                                   style: const TextStyle(
                                     color: kPrimaryLightColor,
                                     fontFamily: primaryFamilyFont,
+                                  ),
+                                ),
+                                const Divider(
+                                  color: kPrimaryLightColor,
+                                ),
+                                Text(
+                                  item.title,
+                                  style: const TextStyle(
+                                    color: kPrimaryLightColor,
+                                    fontFamily: secondaryFamilyFont,
                                   ),
                                 ),
                               ],
@@ -240,21 +250,6 @@ class _EducationScreenState extends State<EducationScreen> {
                 );
               },
             ),
-            // SizedBox(
-            //   height: 280,
-            //   child: ListView.separated(
-            //     padding: const EdgeInsets.all(10),
-            //     separatorBuilder: (context, _) => const SizedBox(
-            //       width: 10,
-            //     ),
-            //     itemCount: extras.length,
-            //     scrollDirection: Axis.horizontal,
-            //     itemBuilder: (context, index) {
-            //       final item = extras[index];
-            //       return buildExtrasCard(item);
-            //     },
-            //   ),
-            // ),
           ],
         ),
       ),

@@ -2,27 +2,32 @@ import 'package:afiq_resume/models/extracurricular_model.dart';
 
 final allExtra = <ExtracurricularModel>[
   ExtracurricularModel(
+    year: 'Head of General Task, Titian Wahyu Club (2017-2020)',
     title:
-        'Presented the research paper at the 7th IEEE International Conference on Signal & Image Processing 2021 attended by best academicians',
+        'Organized and sourced sponsors for various charity programs while participated in the Jom Bekpes, Engage the Refugees, Ilm Project Uno along with Helping the Homeless programs',
     image: 'assets/images/leader.png',
   ),
   ExtracurricularModel(
+    year: 'Block Representative Committee (2017-2019)',
     title:
-        'Successfully published the Speech Emotion Recognition Using Bahasa Malaysia in the IEEE (Institute of Electrical and Electronics Engineers) Xplore publication (2021)',
+        'Engaged with the college management in resolving the day-to-day issues at the hostel block',
     image: 'assets/images/teamwork.png',
   ),
   ExtracurricularModel(
-    title: 'Awarded 5 times Dean’s List',
+    year: 'Participant, Community Service: Youth in Action (2019)',
+    title: 'Carried out various charity work for orphanages in Kelantan',
     image: 'assets/images/household.png',
   ),
   ExtracurricularModel(
+    year: 'Participant (2019)',
     title:
-        'Speech Emotion Recognition (SER) Using Bahasa Malaysia where I developed machine learning algorithms using Python in identifying the emotion of the speaker from the speaker’s speech for my Final Year Project',
+        '‘Charity Run: Run for Underprivileged’, Engitex’19 Wave Run and ‘Fly High 7.0’',
     image: 'assets/images/runner.png',
   ),
   ExtracurricularModel(
+    year: 'Gold and Sliver Medallist (2018)',
     title:
-        'Designed a window cleaning robot, where my team and I Integrated Arduino Nano and other components including as motor driver, servo and DC motor to ensure smooth movement of the robot for my Integrated Design Project',
+        'Won the Gold Medal for volleyball and Silver Medal for marching during the IIUM Sports Carnival',
     image: 'assets/images/volleyball.png',
   ),
 ];
