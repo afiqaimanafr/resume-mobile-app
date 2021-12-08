@@ -103,6 +103,46 @@ class _EducationScreenState extends State<EducationScreen> {
     );
   }
 
+  Widget buildExtrasCard(ExtracurricularModel item) {
+    return Container(
+      width: 400,
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(10),
+        color: kPrimaryLightColor.withOpacity(0.2),
+      ),
+      child: Column(
+        children: [
+          Padding(
+            padding: const EdgeInsets.only(
+              top: 20,
+            ),
+            child: CircleAvatar(
+              radius: 50,
+              backgroundColor: Colors.transparent,
+              backgroundImage: AssetImage(item.image),
+            ),
+          ),
+          Center(
+            child: Padding(
+              padding: const EdgeInsets.all(10.0),
+              child: Text(
+                item.title,
+                style: const TextStyle(
+                  color: kPrimaryLightColor,
+                  fontFamily: primaryFamilyFont,
+                  fontSize: 17,
+                ),
+                overflow: TextOverflow.ellipsis,
+                textAlign: TextAlign.center,
+                maxLines: 10,
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -144,6 +184,77 @@ class _EducationScreenState extends State<EducationScreen> {
               ),
             ),
             buildTitle('Extracurricular Involvement'),
+            ListView.builder(
+              physics: const NeverScrollableScrollPhysics(),
+              shrinkWrap: true,
+              primary: false,
+              itemCount: extras.length,
+              itemBuilder: (ctx, index) {
+                final item = extras[index];
+                return Container(
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: 10,
+                    vertical: 5,
+                  ),
+                  width: double.infinity,
+                  child: Card(
+                    color: Colors.white.withOpacity(0.2),
+                    child: Row(
+                      children: <Widget>[
+                        Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: <Widget>[
+                            Padding(
+                              padding: const EdgeInsets.all(10.0),
+                              child: CircleAvatar(
+                                radius: 50,
+                                backgroundColor: Colors.transparent,
+                                backgroundImage: AssetImage(item.image),
+                              ),
+                            ),
+                          ],
+                        ),
+                        Expanded(
+                          child: Padding(
+                            padding: const EdgeInsets.symmetric(
+                              vertical: 10,
+                              horizontal: 10,
+                            ),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: <Widget>[
+                                Text(
+                                  item.title,
+                                  style: const TextStyle(
+                                    color: kPrimaryLightColor,
+                                    fontFamily: primaryFamilyFont,
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                );
+              },
+            ),
+            // SizedBox(
+            //   height: 280,
+            //   child: ListView.separated(
+            //     padding: const EdgeInsets.all(10),
+            //     separatorBuilder: (context, _) => const SizedBox(
+            //       width: 10,
+            //     ),
+            //     itemCount: extras.length,
+            //     scrollDirection: Axis.horizontal,
+            //     itemBuilder: (context, index) {
+            //       final item = extras[index];
+            //       return buildExtrasCard(item);
+            //     },
+            //   ),
+            // ),
           ],
         ),
       ),
